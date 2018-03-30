@@ -16,7 +16,7 @@ find the sum of the even-valued terms. */
 
 
 
-unsigned long  Fibonacci(unsigned int n);
+unsigned long  Fibonacci(unsigned long n);
 
 static unsigned long total;
 
@@ -31,25 +31,16 @@ int main(){
   while(f< 4000000){
 
     f = Fibonacci(n);
-
-    if(f%2==0){
-      
-      total = total + f;
-      
-    }else{
-
-      total = total + 0;
-
+    if(f%2==0){      
+      total  +=  f;      
     }
-
     n++;
-
-
   }
 
-
+  printf("\n");
   printf("Solution to Project Euler problem #2 = ");
   printf("%lu \n",total);
+  printf("\n");
 
 
 
@@ -61,24 +52,15 @@ int main(){
 
 }
 
-unsigned long  Fibonacci(unsigned int n)
+unsigned long Fibonacci(unsigned long n)
 {
 
-
-  if(n==0){
-           
-    return 0;
-
+  if(n==0){           
+      return 0;
   }else if(n==1){
-
     return 1;
-
   }else if(n>1){
-
-
     return Fibonacci(n-2)+Fibonacci(n-1);
-
-
   }
 
 }
